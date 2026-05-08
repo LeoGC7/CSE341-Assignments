@@ -1,0 +1,8 @@
+### Get contacts (Dev)
+GET http://localhost:8080/contacts
+
+### Get contact by id (Dev)
+GET http://localhost:8080/contacts/69fe403f9b29e55db7007e8a
+
+### Hello World (Dev)
+GET http://localhost:8080/
