@@ -7,6 +7,41 @@ GET http://localhost:8080/contacts/69fe403f9b29e55db7007e8a
 ### Hello World (Dev)
 GET http://localhost:8080/
 
+### Create a new contact (Dev)
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@example.com",
+    "favoriteColor": "green",
+    "birthday": "2000-01-01"
+}
+
+### Create a new contact - THISS IS MEANT TO FAIL (Dev)
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "OnlyFirstName"
+}
+
+### Update an existing contact (Dev)
+PUT http://localhost:8080/contacts/6a0b5a29f22d29b08a59a8e5
+Content-Type: application/json
+
+{
+    "firstName": "Test Updated",
+    "lastName": "User Updated",
+    "email": "test.updated@email.com",
+    "favoriteColor": "green updated",
+    "birthday": "2001-01-01"
+}
+
+### Delete a contact (Dev)
+DELETE http://localhost:8080/contacts/6a0b5a29f22d29b08a59a8e5
+
 ### Get all contacts (Prod)
 GET https://cse341-assignments-dzqm.onrender.com/contacts
 
@@ -15,3 +50,30 @@ GET https://cse341-assignments-dzqm.onrender.com/contacts/69fe403f9b29e55db7007e
 
 ### Hello World (Prod)
 GET https://cse341-assignments-dzqm.onrender.com/
+
+### Create a new contact (Prod)
+POST https://cse341-assignments-dzqm.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "test@example.com",
+    "favoriteColor": "blue",
+    "birthday": "2000-01-01"
+}
+
+### Update a contact (Prod)
+PUT https://cse341-assignments-dzqm.onrender.com/contacts/69fe40549b29e55db7007e8c
+Content-Type: application/json
+
+{
+    "firstName": "Updated",
+    "lastName": "Name",
+    "email": "updated@example.com",
+    "favoriteColor": "red",
+    "birthday": "2000-01-01"
+}
+
+### Delete a contact (Prod)
+DELETE https://cse341-assignments-dzqm.onrender.com/contacts/69fe40549b29e55db7007e8c

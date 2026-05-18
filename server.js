@@ -4,6 +4,8 @@ dotenv.config()
 const express = require('express')
 const cors = require('cors')
 const mongodb = require('./db/connect')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger.json')
 
 // App instance
 const app = express()
@@ -13,6 +15,7 @@ const port = process.env.PORT || 8080
 // App use statements
 app.use(cors())
 app.use(express.json())
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // Basic Route to the / endpoint
 app.get('/', (req, res) => {
